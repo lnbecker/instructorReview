@@ -1,0 +1,25 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @instructor.format %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @instructor.description %>
+</p>
+
+<h2>Reviews</h2>
+<%= render @instructor.reviews %>
+
+
+<h2>Add a review:</h2>
+<%= render 'reviews/form' %>
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %>
+<%= link_to 'Back', instructors_path %>

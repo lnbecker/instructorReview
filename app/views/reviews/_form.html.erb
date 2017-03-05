@@ -1,0 +1,17 @@
+<%= form_for([@instructor, @instructor.reviews.build]) do |f| %>
+
+       <p>Please rate your experience in this instructor's class from 1-10  <strong>(1=worst, 10=best)</strong>. <br />Don't forget to elaborate on your rating with a comment!</p>
+ <p>
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </p>
+  
+<p>
+      <%= f.label :comment %><br>
+      <%= f.text_area :comment %>
+  </p>
+<p>*Note: reviews without ratings and comments will not be posted</p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

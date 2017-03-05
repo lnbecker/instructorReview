@@ -1,0 +1,24 @@
+#<h1>Listing Instructors</h1>
+
+<%= link_to 'New Instructor', new_instructor_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Format</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @instructors.each do |instructor| %>
+    <tr>
+        <td><%= instructor.name %></td>
+        <td><%=instructor.format %></td>
+        <td><%= instructor.description %></td>
+        <td><%= link_to 'Show', instructor_path(instructor) %></td>
+        <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
+        <td><%= link_to 'Delete', instructor_path(instructor),
+              method: :delete,
+data: { confirm: 'Are you sure you want to delete this instructor?' } %></td>
+    </tr>
+  <% end %>
+</table>
